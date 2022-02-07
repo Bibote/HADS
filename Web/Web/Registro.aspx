@@ -10,8 +10,25 @@
 <body>
     <form id="form1" runat="server">
         <div>
+            Registro de Usuarios<br />
+            Email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input id="Text5" type="text" /><br />
+            Nombre:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input id="Text4" type="text" /><br />
+            Apellidos:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input id="Text1" type="text" /><br />
+            Password:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input id="Text2" type="text" /><br />
+            Repetir password:&nbsp;&nbsp;&nbsp;&nbsp; <input id="Text3" type="text" /><br />
+            <br />
+            <br />
+            Rol: <asp:RadioButtonList ID="RadioButtonList1" runat="server">
+                <asp:ListItem Selected="True">Alumno</asp:ListItem>
+                <asp:ListItem>Profesor</asp:ListItem>
+            </asp:RadioButtonList>
+            <br />
+            <br />
+            <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Atras" />
         </div>
-        <asp:Button ID="Button1" runat="server" Text="Button" />
     </form>
 </body>
 </html>
