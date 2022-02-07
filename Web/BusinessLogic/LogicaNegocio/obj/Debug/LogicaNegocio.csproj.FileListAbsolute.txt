@@ -1,0 +1,6 @@
+C:\Users\milla\Desktop\Uni\Tercero\HADS\HADS\Web\BusinessLogic\LogicaNegocio\bin\Debug\LogicaNegocio.dll
+C:\Users\milla\Desktop\Uni\Tercero\HADS\HADS\Web\BusinessLogic\LogicaNegocio\bin\Debug\LogicaNegocio.pdb
+C:\Users\milla\Desktop\Uni\Tercero\HADS\HADS\Web\BusinessLogic\LogicaNegocio\obj\Debug\LogicaNegocio.csproj.AssemblyReference.cache
+C:\Users\milla\Desktop\Uni\Tercero\HADS\HADS\Web\BusinessLogic\LogicaNegocio\obj\Debug\LogicaNegocio.csproj.CoreCompileInputs.cache
+C:\Users\milla\Desktop\Uni\Tercero\HADS\HADS\Web\BusinessLogic\LogicaNegocio\obj\Debug\LogicaNegocio.dll
+C:\Users\milla\Desktop\Uni\Tercero\HADS\HADS\Web\BusinessLogic\LogicaNegocio\obj\Debug\LogicaNegocio.pdb

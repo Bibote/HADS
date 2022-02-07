@@ -57,3 +57,5 @@ C:\Users\milla\Desktop\Uni\Tercero\HADS\HADS\Web\Web\obj\Debug\Web.csproj.CoreCo
 C:\Users\milla\Desktop\Uni\Tercero\HADS\HADS\Web\Web\obj\Debug\Web.csproj.CopyComplete
 C:\Users\milla\Desktop\Uni\Tercero\HADS\HADS\Web\Web\obj\Debug\Web.dll
 C:\Users\milla\Desktop\Uni\Tercero\HADS\HADS\Web\Web\obj\Debug\Web.pdb
+C:\Users\milla\Desktop\Uni\Tercero\HADS\HADS\Web\Web\bin\LogicaNegocio.dll
+C:\Users\milla\Desktop\Uni\Tercero\HADS\HADS\Web\Web\bin\LogicaNegocio.pdb
