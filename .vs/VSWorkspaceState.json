@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Web",
+    "\\Web\\Web"
   ],
-  "SelectedNode": "\\Web.sln",
+  "SelectedNode": "\\Web\\Web\\inicio.aspx",
   "PreviewInSolutionExplorer": false
 }

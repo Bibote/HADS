@@ -26,7 +26,7 @@ namespace LogicaNegocio
                 mail.Body = input;
 
                 SmtpServer.Port = 587;
-                SmtpServer.Credentials = new System.Net.NetworkCredential("msaez034@ikasle.ehu.eus", "Mosquito8-");
+                SmtpServer.Credentials = new System.Net.NetworkCredential("usuario", "contraseña");
                 SmtpServer.EnableSsl = true;
 
                 SmtpServer.Send(mail);
