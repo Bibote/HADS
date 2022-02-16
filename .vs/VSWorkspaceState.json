@@ -2,8 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\Web",
+    "\\Web\\BusinessLogic",
+    "\\Web\\BusinessLogic\\LogicaNegocio",
     "\\Web\\Web"
   ],
-  "SelectedNode": "\\Web\\Web\\inicio.aspx",
+  "SelectedNode": "\\Web\\Web\\Registro.aspx",
   "PreviewInSolutionExplorer": false
 }

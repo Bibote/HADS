@@ -71,6 +71,7 @@
     <Content Include="Web.config" />
     <Content Include="inicio.aspx" />
     <Content Include="CambiarContrasena.aspx" />
+    <Content Include="confirmar.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -95,6 +96,13 @@
     <Compile Include="CambiarContrasena.aspx.designer.cs">
       <DependentUpon>CambiarContrasena.aspx</DependentUpon>
     </Compile>
+    <Compile Include="confirmar.aspx.cs">
+      <DependentUpon>confirmar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="confirmar.aspx.designer.cs">
+      <DependentUpon>confirmar.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -106,9 +114,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BusinessLogic\LogicaNegocio\LogicaNegocio.csproj">
+    <ProjectReference Include="..\BusinessLogic\LogicaNegocio\BackEnd.csproj">
       <Project>{bc9a4f5b-edd8-449b-b35e-add4cf93f3fd}</Project>
-      <Name>LogicaNegocio</Name>
+      <Name>BackEnd</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

@@ -25,11 +25,12 @@ namespace Web
         {
             var logica = new LogicaNegocio.LogicaNegocio();
             Random r = new Random();
+            int rando = Int32.Parse(r.Next(100000, 999999).ToString());
+            logica.SendEmail(TextBox1.Text, "http://localhost/PracticaHAS/confirmar.aspx?mbr=" +TextBox1.Text + "&numconf="+rando);
 
-            logica.SendEmail(TextBox1.Text, r.Next(100000, 999999).ToString());
-
-
+            Label1.Text= logica.storeUser(TextBox1.Text, TextBox2.Text, TextBox3.Text, rando, false, RadioButtonList1.SelectedValue, TextBox4.Text, 34234);
         }
-            
+
+
     }
 }
