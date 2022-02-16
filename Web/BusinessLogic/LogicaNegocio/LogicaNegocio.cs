@@ -41,13 +41,19 @@ namespace LogicaNegocio
         public string storeUser(string mail, string nombre, string apellidos, int num, bool confimado, string tipo, string pass, int codpass)
         {
             bd.conectar();
-            bd.addUser(mail, nombre, apellidos, num, confimado, tipo, pass, codpass);
+            string s =bd.addUser(mail, nombre, apellidos, num, confimado, tipo, pass, codpass);
             bd.cerrarconexion();
-            return "te falta mirar esto";
+            return s;
         }
 
-        public string validateUser(string mail, int num)
+        
+        public string validateUser(string mail, int code)
         {
+            bd.conectar();
+            string s = bd.validateUser(mail, code);
+         
+            bd.cerrarconexion();
+            return s;
 
         }
     }

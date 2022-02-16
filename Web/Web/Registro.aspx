@@ -38,8 +38,8 @@
                 <asp:ListItem>Profesor</asp:ListItem>
             </asp:RadioButtonList>
             <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Registrarse" />
-            <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
             <br />
+            <asp:Label ID="Label1" runat="server" ForeColor="Red"></asp:Label>
             <br />
             <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Atras" />
         </div>

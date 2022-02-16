@@ -11,6 +11,7 @@
     <form id="form1" runat="server">
         <div>
             Email validado</div>
+        <asp:Label ID="Label1" runat="server"></asp:Label>
     </form>
 </body>
 </html>

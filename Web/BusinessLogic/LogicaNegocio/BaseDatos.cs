@@ -46,15 +46,44 @@ namespace LogicaNegocio
             }
             catch (Exception ex)
             {
-                return ex.Message;
+                return "Ha ocurrido algún error en el servidor";
             }
 
-            return (numregs + " registro(s) insertado(s) en la BD ");
+            return ("Enviado un email para verificar el usuario");
+        }
+        public bool userExistCode(string mail,int code)
+        {
+            var st = "select count(*) from Usuarios Where email='"+mail+"' and numconfir='"+code+"'";
+            comando = new SqlCommand(st, conexion);
+            if (comando.ExecuteScalar().ToString().Equals("1"))
+            {
+                return true;
+            }
+            else return false;
+   
         }
 
-        public string validateUser(string mail, int num)
+        public string validateUser(string mail, int code)
         {
-            var st = "SELECT * FROM Usuarios WHERE 'email'=";
+            if (userExistCode(mail,code))
+            {
+                var st = "UPDATE Usuarios SET confirmado='" +true+ "'  Where email='" + mail + "' and numconfir='" + code + "'";
+                int numregs;
+                comando = new SqlCommand(st, conexion);
+                try
+                {
+                    numregs = comando.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    return ex.Message;
+                }
+
+                return ("Usuario validado");
+            }
+            return "Link invalido";
         }
+
+  
     }
 }

@@ -14,6 +14,8 @@ namespace Web
             var logica = new LogicaNegocio.LogicaNegocio();
             string email = Request.Params["mbr"];
             string numconf = Request.Params["numconf"];
+            Label1.Text=logica.validateUser(email, Int32.Parse(numconf));
+
 
 
         }
