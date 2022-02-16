@@ -29,7 +29,7 @@ namespace Web
             Random r = new Random();
             int rando = Int32.Parse(r.Next(100000, 999999).ToString());
             int randopass = Int32.Parse(r.Next(100000, 999999).ToString());
-            logica.SendEmail(TextBox1.Text, "http://localhost/PracticaHAS/confirmar.aspx?mbr=" +TextBox1.Text + "&numconf="+rando);
+            logica.SendEmail(TextBox1.Text, "http://hads22-062.azurewebsites.net/confirmar.aspx?mbr=" + TextBox1.Text + "&numconf="+rando);
 
             Label1.Text= logica.storeUser(TextBox1.Text, TextBox2.Text, TextBox3.Text, rando, false, RadioButtonList1.SelectedValue, TextBox4.Text, randopass);
             

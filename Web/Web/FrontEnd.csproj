@@ -114,6 +114,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\hads22-062 - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\hads22-062 - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,0 +1,6 @@
+C:\Users\milla\Desktop\Uni\Tercero\HADS\HADS\Web\BusinessLogic\LogicaNegocio\bin\Release\LogicaNegocio.dll
+C:\Users\milla\Desktop\Uni\Tercero\HADS\HADS\Web\BusinessLogic\LogicaNegocio\bin\Release\LogicaNegocio.pdb
+C:\Users\milla\Desktop\Uni\Tercero\HADS\HADS\Web\BusinessLogic\LogicaNegocio\obj\Release\BackEnd.csproj.AssemblyReference.cache
+C:\Users\milla\Desktop\Uni\Tercero\HADS\HADS\Web\BusinessLogic\LogicaNegocio\obj\Release\BackEnd.csproj.CoreCompileInputs.cache
+C:\Users\milla\Desktop\Uni\Tercero\HADS\HADS\Web\BusinessLogic\LogicaNegocio\obj\Release\LogicaNegocio.dll
+C:\Users\milla\Desktop\Uni\Tercero\HADS\HADS\Web\BusinessLogic\LogicaNegocio\obj\Release\LogicaNegocio.pdb
