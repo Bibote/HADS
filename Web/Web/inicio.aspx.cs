@@ -18,5 +18,17 @@ namespace Web
         {
             Response.Redirect("Registro.aspx");
         }
+
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            var logica = new LogicaNegocio.LogicaNegocio();
+            if (logica.logIn(TextBox1.Text,TextBox2.Text)) {
+                Response.Redirect("app.aspx");
+            }
+            else
+            {
+                Label1.Text = "Usuario no validado o incorrecto";
+            }
+        }
     }
 }

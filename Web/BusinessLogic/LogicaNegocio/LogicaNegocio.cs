@@ -56,5 +56,14 @@ namespace LogicaNegocio
             return s;
 
         }
+
+        public bool logIn(string mail, string pass)
+        {
+            bd.conectar();
+            bool s = bd.logIn(mail, pass);
+
+            bd.cerrarconexion();
+            return s;
+        }
     }
 }

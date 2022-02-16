@@ -84,6 +84,17 @@ namespace LogicaNegocio
             return "Link invalido";
         }
 
-  
+        public bool logIn(string mail, string pass)
+        {
+            var st = "select count(*) from Usuarios Where email='" + mail + "' and pass='" + pass + "' and confirmado='"+true+"'";
+            comando = new SqlCommand(st, conexion);
+            if (comando.ExecuteScalar().ToString().Equals("1"))
+            {
+                return true;
+            }
+            else return false;
+        }
+
+
     }
 }

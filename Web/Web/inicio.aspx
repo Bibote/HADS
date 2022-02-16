@@ -13,10 +13,19 @@
             <br />
             Inicio<br />
             <br />
+            Email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+            <br />
+            Contraseña:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+            <br />
+            <br />
+            <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="Iniciar Sesion" />
+            <br />
+            <br />
+            <asp:Label ID="Label1" runat="server" ForeColor="Red"></asp:Label>
             <br />
         </div>
-        <p>
-            &nbsp;</p>
         <p>
             <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Registrarse" />
             <asp:Button ID="Button2" runat="server" Text="Cambiar contraseña" />
