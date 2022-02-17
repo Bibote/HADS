@@ -33,7 +33,7 @@
             <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="TextBox5" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
             <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="TextBox5" ControlToValidate="TextBox4" ErrorMessage="Las contraseñas no coinciden" ForeColor="Red"></asp:CompareValidator>
             <br />
-            Rol: <asp:RadioButtonList ID="RadioButtonList1" runat="server">
+            Rol: <asp:RadioButtonList ID="RadioButtonList1" runat="server" style="height: 54px; width: 94px">
                 <asp:ListItem Selected="True">Alumno</asp:ListItem>
                 <asp:ListItem>Profesor</asp:ListItem>
             </asp:RadioButtonList>

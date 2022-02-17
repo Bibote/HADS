@@ -33,12 +33,6 @@ namespace Web
 
             Label1.Text= logica.storeUser(TextBox1.Text, TextBox2.Text, TextBox3.Text, rando, false, RadioButtonList1.SelectedValue, TextBox4.Text, randopass);
             
-            
-          
-  
-  
-
-
         }
    
 

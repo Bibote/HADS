@@ -95,6 +95,24 @@ namespace LogicaNegocio
             else return false;
         }
 
+        public bool emailRegistered(string mail)
+        {
+            var st = "select count(*) from Usuarios Where email='" + mail + "'";
+            comando = new SqlCommand(st, conexion);
+            if (comando.ExecuteScalar().ToString().Equals("1"))
+            {
+                return true;
+            }
+            else return false;
+        }
+
+        public void updatePassword(string email, string pass)
+        {
+            var st = "update Usuarios Set pass='" + pass + "' Where email='" + email + "'";
+            comando = new SqlCommand(st, conexion);
+            comando.ExecuteNonQuery();
+
+        }
 
     }
 }
