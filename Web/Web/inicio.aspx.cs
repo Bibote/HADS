@@ -30,5 +30,10 @@ namespace Web
                 Label1.Text = "Usuario no validado o incorrecto";
             }
         }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("CambiarContrasena.aspx");
+        }
     }
 }

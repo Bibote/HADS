@@ -65,5 +65,31 @@ namespace LogicaNegocio
             bd.cerrarconexion();
             return s;
         }
+
+        public bool emailRegistered(string mail)
+        {
+            bd.conectar();
+            bool res = bd.emailRegistered(mail);
+            bd.cerrarconexion();
+
+            return res;
+        }
+
+        public string updatePass(string mail, string pass, int num)
+        {
+            bd.conectar();
+            string a=bd.updatePassword(mail, pass, num);
+            bd.cerrarconexion();
+            return a;
+        }
+
+        public string getCodPass(string mail)
+        {
+            bd.conectar();
+            string num =bd.getNumPass(mail);
+            bd.cerrarconexion();
+            return num;
+        }
+
     }
 }
