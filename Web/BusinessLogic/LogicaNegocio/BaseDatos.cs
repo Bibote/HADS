@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace LogicaNegocio
 {
@@ -84,15 +85,19 @@ namespace LogicaNegocio
             return "Link invalido";
         }
 
-        public bool logIn(string mail, string pass)
+        public string logIn(string mail, string pass)
         {
-            var st = "select count(*) from Usuarios Where email='" + mail + "' and pass='" + pass + "' and confirmado='"+true+"'";
+            string myString="vacio";
+            var st = "select * from Usuarios Where email='" + mail + "' and pass='" + pass + "' and confirmado='"+true+"'";
             comando = new SqlCommand(st, conexion);
-            if (comando.ExecuteScalar().ToString().Equals("1"))
-            {
-                return true;
+
+            SqlDataReader s =comando.ExecuteReader();
+            while (s.Read()) {
+                myString = s.GetString(5);
             }
-            else return false;
+            s.Close();
+            return myString;
+
         }
 
         public bool emailRegistered(string mail)

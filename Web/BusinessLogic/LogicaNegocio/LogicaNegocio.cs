@@ -57,10 +57,10 @@ namespace LogicaNegocio
 
         }
 
-        public bool logIn(string mail, string pass)
+        public string logIn(string mail, string pass)
         {
             bd.conectar();
-            bool s = bd.logIn(mail, pass);
+            string s = bd.logIn(mail, pass);
 
             bd.cerrarconexion();
             return s;
