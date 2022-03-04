@@ -14,15 +14,15 @@
             Inicio<br />
             <br />
             Email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TextBox1" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
+            <asp:TextBox ID="TextBox1" runat="server" ValidationGroup="sesion"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TextBox1" ErrorMessage="*" ForeColor="Red" ValidationGroup="sesion"></asp:RequiredFieldValidator>
             <br />
             Contraseña:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
-            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TextBox2" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
+            <asp:TextBox ID="TextBox2" runat="server" ValidationGroup="sesion"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TextBox2" ErrorMessage="*" ForeColor="Red" ValidationGroup="sesion"></asp:RequiredFieldValidator>
             <br />
             <br />
-            <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="Iniciar Sesion" />
+            <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="Iniciar Sesion" ValidationGroup="sesion" />
             <br />
             <br />
             <asp:Label ID="Label1" runat="server" ForeColor="Red"></asp:Label>
