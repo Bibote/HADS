@@ -7,16 +7,16 @@ using System.Web.UI.WebControls;
 
 namespace Web
 {
-    public partial class profesor : System.Web.UI.Page
+    public partial class tareasProfesor : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Label1.Text = "Bienvenido! " + Session["Nombre"];
+           
         }
 
-        protected void Menu1_MenuItemClick(object sender, MenuEventArgs e)
+        protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Response.Redirect(Menu1.SelectedValue);
+           // Response.Redirect("tareasProfesor.aspx?param=DropDownList1.SelectedValue");
         }
     }
 }

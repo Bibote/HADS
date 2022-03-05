@@ -68,8 +68,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AlumnoMain.aspx" />
+    <Content Include="insertarTarea.aspx" />
     <Content Include="profesor.aspx" />
     <Content Include="Registro.aspx" />
+    <Content Include="tareasProfesor.aspx" />
     <Content Include="Web.config" />
     <Content Include="inicio.aspx" />
     <Content Include="CambiarContrasena.aspx" />
@@ -82,6 +84,13 @@
     </Compile>
     <Compile Include="AlumnoMain.aspx.designer.cs">
       <DependentUpon>AlumnoMain.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="insertarTarea.aspx.cs">
+      <DependentUpon>insertarTarea.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="insertarTarea.aspx.designer.cs">
+      <DependentUpon>insertarTarea.aspx</DependentUpon>
     </Compile>
     <Compile Include="profesor.aspx.cs">
       <DependentUpon>profesor.aspx</DependentUpon>
@@ -118,6 +127,13 @@
     </Compile>
     <Compile Include="confirmar.aspx.designer.cs">
       <DependentUpon>confirmar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="tareasProfesor.aspx.cs">
+      <DependentUpon>tareasProfesor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="tareasProfesor.aspx.designer.cs">
+      <DependentUpon>tareasProfesor.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

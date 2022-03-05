@@ -24,12 +24,12 @@
             <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="TextBox3" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
             <br />
             Password:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
+            <asp:TextBox ID="TextBox4" runat="server" TextMode="Password"></asp:TextBox>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="TextBox4" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
             <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="TextBox4" ErrorMessage="La contraseña es demasiado corta" ForeColor="Red" ValidationExpression="[0-9a-zA-Z]{6,}"></asp:RegularExpressionValidator>
             <br />
             Repetir password:&nbsp;&nbsp;&nbsp;&nbsp; 
-            <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
+            <asp:TextBox ID="TextBox5" runat="server" TextMode="Password"></asp:TextBox>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="TextBox5" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
             <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="TextBox5" ControlToValidate="TextBox4" ErrorMessage="Las contraseñas no coinciden" ForeColor="Red"></asp:CompareValidator>
             <br />

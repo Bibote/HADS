@@ -38,7 +38,7 @@ namespace LogicaNegocio
 
         public String addUser(string mail, string nombre, string apellidos, int num, bool confimado, string tipo, string pass, int codpass)
         {
-            var st = "insert into Usuarios values ('" + mail + " ','" + nombre + " ','" + apellidos + " ','" + num + " ','" + confimado + " ','" + tipo + " ','" + pass + " ','" + codpass + " ')";
+            var st = "insert into Usuario values ('" + mail + " ','" + nombre + " ','" + apellidos + " ','" + num + " ','" + confimado + " ','" + tipo + " ','" + pass + " ','" + codpass + " ')";
             int numregs;
             comando = new SqlCommand(st, conexion);
             try
@@ -54,7 +54,7 @@ namespace LogicaNegocio
         }
         public bool userExistCode(string mail,int code)
         {
-            var st = "select count(*) from Usuarios Where email='"+mail+"' and numconfir='"+code+"'";
+            var st = "select count(*) from Usuario Where email='"+mail+"' and numconfir='"+code+"'";
             comando = new SqlCommand(st, conexion);
             if (comando.ExecuteScalar().ToString().Equals("1"))
             {
@@ -68,7 +68,7 @@ namespace LogicaNegocio
         {
             if (userExistCode(mail,code))
             {
-                var st = "UPDATE Usuarios SET confirmado='" +true+ "'  Where email='" + mail + "' and numconfir='" + code + "'";
+                var st = "UPDATE Usuario SET confirmado='" +true+ "'  Where email='" + mail + "' and numconfir='" + code + "'";
                 int numregs;
                 comando = new SqlCommand(st, conexion);
                 try
@@ -88,7 +88,7 @@ namespace LogicaNegocio
         public string logIn(string mail, string pass)
         {
             string myString="vacio";
-            var st = "select * from Usuarios Where email='" + mail + "' and pass='" + pass + "' and confirmado='"+true+"'";
+            var st = "select * from Usuario Where email='" + mail + "' and pass='" + pass + "' and confirmado='"+true+"'";
             comando = new SqlCommand(st, conexion);
 
             SqlDataReader s =comando.ExecuteReader();

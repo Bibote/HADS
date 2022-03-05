@@ -10,11 +10,11 @@
 <body>
     <form id="form1" runat="server">
         <div>
+            <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
         </div>
-        <asp:Menu ID="Menu1" runat="server">
+        <asp:Menu ID="Menu1" runat="server" OnMenuItemClick="Menu1_MenuItemClick">
             <Items>
-                <asp:MenuItem Text="Tareas" Value="Tareas.aspx"></asp:MenuItem>
-                <asp:MenuItem Text="Nuevo elemento" Value="Nuevo elemento"></asp:MenuItem>
+                <asp:MenuItem Text="Tareas" Value="tareasProfesor.aspx"></asp:MenuItem>
             </Items>
         </asp:Menu>
     </form>
