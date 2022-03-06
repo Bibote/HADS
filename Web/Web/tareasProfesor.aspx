@@ -17,7 +17,6 @@
             <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" DataKeyNames="codigo" DataSourceID="SqlDataSource2" GridLines="Vertical">
                 <AlternatingRowStyle BackColor="#DCDCDC" />
                 <Columns>
-                    <asp:CommandField ShowEditButton="True" />
                     <asp:BoundField DataField="codigo" HeaderText="codigo" ReadOnly="True" SortExpression="codigo" />
                     <asp:BoundField DataField="descripcion" HeaderText="descripcion" SortExpression="descripcion" />
                     <asp:BoundField DataField="codAsig" HeaderText="codAsig" SortExpression="codAsig" />
@@ -35,16 +34,16 @@
                 <SortedDescendingCellStyle BackColor="#CAC9C9" />
                 <SortedDescendingHeaderStyle BackColor="#000065" />
             </asp:GridView>
-            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:HADS2206ConnectionString %>" SelectCommand="getTareas" SelectCommandType="StoredProcedure" UpdateCommand="updateTarea" UpdateCommandType="StoredProcedure">
+            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:HADS2206ConnectionString %>" SelectCommand="getTareas" SelectCommandType="StoredProcedure" UpdateCommand="UPDATE TareaGenerica SET descripcion = @descri, codAsig = @cod, hEstimadas = @horas, explotacion = @explo, tipoTarea = @tipo">
                 <SelectParameters>
                     <asp:ControlParameter ControlID="asignatura" Name="cod" PropertyName="SelectedValue" Type="String" />
                 </SelectParameters>
                 <UpdateParameters>
-                    <asp:Parameter Name="des" Type="String" />
-                    <asp:Parameter Name="cod" Type="String" />
-                    <asp:Parameter Name="hora" Type="Int32" />
-                    <asp:Parameter Name="explo" Type="Boolean" />
-                    <asp:Parameter Name="tipo" Type="String" />
+                    <asp:Parameter Name="descri" />
+                    <asp:Parameter Name="cod" />
+                    <asp:Parameter Name="horas" />
+                    <asp:Parameter Name="explo" />
+                    <asp:Parameter Name="tipo" />
                 </UpdateParameters>
             </asp:SqlDataSource>
             <br />

@@ -91,5 +91,13 @@ namespace LogicaNegocio
             return num;
         }
 
+        public string addTarea(string cod, string des, string codas, int horas, bool explo, string tipo)
+        {
+            bd.conectar();
+            string s = bd.addTarea(cod, des, codas, horas, explo, tipo);
+            bd.cerrarconexion();
+            return s;
+        }
+
     }
 }

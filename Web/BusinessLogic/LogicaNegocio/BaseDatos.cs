@@ -139,9 +139,34 @@ namespace LogicaNegocio
             return comando.ExecuteScalar().ToString();
         
         }
+
+        public String addTarea(string cod, string des, string codas, int horas, bool explo, string tipo)
+        {
         
 
-        
+            comando = new SqlCommand("addTarea", conexion);
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("cod", new SqlParameter()).Value = cod;
+            comando.Parameters.AddWithValue("des", new SqlParameter()).Value = des;
+            comando.Parameters.AddWithValue("codas", new SqlParameter()).Value = codas;
+            comando.Parameters.AddWithValue("horas", new SqlParameter()).Value = horas;
+            comando.Parameters.AddWithValue("explo", new SqlParameter()).Value = explo;
+            comando.Parameters.AddWithValue("tipo", new SqlParameter()).Value = tipo;
+
+            try
+            {
+                comando.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                return "Ha ocurrido algún error en el servidor";
+            }
+
+            return ("Tarea añadida");
+        }
+
+
+
 
     }
 }

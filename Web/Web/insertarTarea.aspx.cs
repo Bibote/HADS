@@ -13,5 +13,16 @@ namespace Web
         {
 
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            var logica = new LogicaNegocio.LogicaNegocio();
+            Label1.Text = logica.addTarea(TextBox1.Text, TextBox2.Text, DropDownList1.SelectedValue, Int32.Parse(TextBox4.Text),false, DropDownList2.SelectedValue);
+        }
+
+        protected void LinkButton1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("tareassProfesor.aspx");
+        }
     }
 }
