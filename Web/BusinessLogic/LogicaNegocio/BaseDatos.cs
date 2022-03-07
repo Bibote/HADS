@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace LogicaNegocio
 {
@@ -37,7 +38,7 @@ namespace LogicaNegocio
 
         public String addUser(string mail, string nombre, string apellidos, int num, bool confimado, string tipo, string pass, int codpass)
         {
-            var st = "insert into Usuarios values ('" + mail + " ','" + nombre + " ','" + apellidos + " ','" + num + " ','" + confimado + " ','" + tipo + " ','" + pass + " ','" + codpass + " ')";
+            var st = "insert into Usuario values ('" + mail + " ','" + nombre + " ','" + apellidos + " ','" + num + " ','" + confimado + " ','" + tipo + " ','" + pass + " ','" + codpass + " ')";
             int numregs;
             comando = new SqlCommand(st, conexion);
             try
@@ -53,7 +54,7 @@ namespace LogicaNegocio
         }
         public bool userExistCode(string mail,int code)
         {
-            var st = "select count(*) from Usuarios Where email='"+mail+"' and numconfir='"+code+"'";
+            var st = "select count(*) from Usuario Where email='"+mail+"' and numconfir='"+code+"'";
             comando = new SqlCommand(st, conexion);
             if (comando.ExecuteScalar().ToString().Equals("1"))
             {
@@ -67,7 +68,7 @@ namespace LogicaNegocio
         {
             if (userExistCode(mail,code))
             {
-                var st = "UPDATE Usuarios SET confirmado='" +true+ "'  Where email='" + mail + "' and numconfir='" + code + "'";
+                var st = "UPDATE Usuario SET confirmado='" +true+ "'  Where email='" + mail + "' and numconfir='" + code + "'";
                 int numregs;
                 comando = new SqlCommand(st, conexion);
                 try
@@ -84,15 +85,19 @@ namespace LogicaNegocio
             return "Link invalido";
         }
 
-        public bool logIn(string mail, string pass)
+        public string logIn(string mail, string pass)
         {
-            var st = "select count(*) from Usuarios Where email='" + mail + "' and pass='" + pass + "' and confirmado='"+true+"'";
+            string myString="vacio";
+            var st = "select * from Usuario Where email='" + mail + "' and pass='" + pass + "' and confirmado='"+true+"'";
             comando = new SqlCommand(st, conexion);
-            if (comando.ExecuteScalar().ToString().Equals("1"))
-            {
-                return true;
+
+            SqlDataReader s =comando.ExecuteReader();
+            while (s.Read()) {
+                myString = s.GetString(5);
             }
-            else return false;
+            s.Close();
+            return myString;
+
         }
 
         public bool emailRegistered(string mail)
@@ -134,9 +139,34 @@ namespace LogicaNegocio
             return comando.ExecuteScalar().ToString();
         
         }
+
+        public String addTarea(string cod, string des, string codas, int horas, bool explo, string tipo)
+        {
         
 
-        
+            comando = new SqlCommand("addTarea", conexion);
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("cod", new SqlParameter()).Value = cod;
+            comando.Parameters.AddWithValue("des", new SqlParameter()).Value = des;
+            comando.Parameters.AddWithValue("codas", new SqlParameter()).Value = codas;
+            comando.Parameters.AddWithValue("horas", new SqlParameter()).Value = horas;
+            comando.Parameters.AddWithValue("explo", new SqlParameter()).Value = explo;
+            comando.Parameters.AddWithValue("tipo", new SqlParameter()).Value = tipo;
+
+            try
+            {
+                comando.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                return "Ha ocurrido algún error en el servidor";
+            }
+
+            return ("Tarea añadida");
+        }
+
+
+
 
     }
 }

@@ -18,7 +18,7 @@
             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TextBox1" ErrorMessage="*" ForeColor="Red" ValidationGroup="sesion"></asp:RequiredFieldValidator>
             <br />
             Contraseña:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="TextBox2" runat="server" ValidationGroup="sesion"></asp:TextBox>
+            <asp:TextBox ID="TextBox2" runat="server" ValidationGroup="sesion" TextMode="Password"></asp:TextBox>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TextBox2" ErrorMessage="*" ForeColor="Red" ValidationGroup="sesion"></asp:RequiredFieldValidator>
             <br />
             <br />

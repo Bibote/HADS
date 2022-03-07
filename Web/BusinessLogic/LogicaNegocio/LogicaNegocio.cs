@@ -57,10 +57,10 @@ namespace LogicaNegocio
 
         }
 
-        public bool logIn(string mail, string pass)
+        public string logIn(string mail, string pass)
         {
             bd.conectar();
-            bool s = bd.logIn(mail, pass);
+            string s = bd.logIn(mail, pass);
 
             bd.cerrarconexion();
             return s;
@@ -89,6 +89,14 @@ namespace LogicaNegocio
             string num =bd.getNumPass(mail);
             bd.cerrarconexion();
             return num;
+        }
+
+        public string addTarea(string cod, string des, string codas, int horas, bool explo, string tipo)
+        {
+            bd.conectar();
+            string s = bd.addTarea(cod, des, codas, horas, explo, tipo);
+            bd.cerrarconexion();
+            return s;
         }
 
     }

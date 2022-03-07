@@ -7,11 +7,12 @@ using System.Web.UI.WebControls;
 
 namespace Web
 {
-    public partial class app : System.Web.UI.Page
+    public partial class AlumnoMain : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Label1.Text = (string)Session["Nombre"];
+            Label2.Text = (string)Session["Tipo"];
         }
     }
 }
