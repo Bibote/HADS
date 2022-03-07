@@ -14,9 +14,9 @@
             <asp:DropDownList ID="asignatura" runat="server" DataSourceID="SqlDataSource1" DataTextField="codigo" DataValueField="codigo" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged" AutoPostBack="True">
             </asp:DropDownList>
             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:HADS2206ConnectionString %>" SelectCommand="SELECT [codigo] FROM [Asignatura]"></asp:SqlDataSource>
-            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" DataKeyNames="codigo" DataSourceID="SqlDataSource2" GridLines="Vertical">
-                <AlternatingRowStyle BackColor="#DCDCDC" />
+            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="codigo" DataSourceID="SqlDataSource2">
                 <Columns>
+                    <asp:CommandField ShowEditButton="True" />
                     <asp:BoundField DataField="codigo" HeaderText="codigo" ReadOnly="True" SortExpression="codigo" />
                     <asp:BoundField DataField="descripcion" HeaderText="descripcion" SortExpression="descripcion" />
                     <asp:BoundField DataField="codAsig" HeaderText="codAsig" SortExpression="codAsig" />
@@ -24,26 +24,39 @@
                     <asp:CheckBoxField DataField="explotacion" HeaderText="explotacion" SortExpression="explotacion" />
                     <asp:BoundField DataField="tipoTarea" HeaderText="tipoTarea" SortExpression="tipoTarea" />
                 </Columns>
-                <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
-                <HeaderStyle BackColor="#000084" Font-Bold="True" ForeColor="White" />
-                <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" />
-                <RowStyle BackColor="#EEEEEE" ForeColor="Black" />
-                <SelectedRowStyle BackColor="#008A8C" Font-Bold="True" ForeColor="White" />
-                <SortedAscendingCellStyle BackColor="#F1F1F1" />
-                <SortedAscendingHeaderStyle BackColor="#0000A9" />
-                <SortedDescendingCellStyle BackColor="#CAC9C9" />
-                <SortedDescendingHeaderStyle BackColor="#000065" />
             </asp:GridView>
-            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:HADS2206ConnectionString %>" SelectCommand="getTareas" SelectCommandType="StoredProcedure" UpdateCommand="UPDATE TareaGenerica SET descripcion = @descri, codAsig = @cod, hEstimadas = @horas, explotacion = @explo, tipoTarea = @tipo">
+            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:HADS2206ConnectionString %>" DeleteCommand="DELETE FROM [TareaGenerica] WHERE [codigo] = @original_codigo AND (([descripcion] = @original_descripcion) OR ([descripcion] IS NULL AND @original_descripcion IS NULL)) AND (([codAsig] = @original_codAsig) OR ([codAsig] IS NULL AND @original_codAsig IS NULL)) AND (([hEstimadas] = @original_hEstimadas) OR ([hEstimadas] IS NULL AND @original_hEstimadas IS NULL)) AND (([explotacion] = @original_explotacion) OR ([explotacion] IS NULL AND @original_explotacion IS NULL)) AND (([tipoTarea] = @original_tipoTarea) OR ([tipoTarea] IS NULL AND @original_tipoTarea IS NULL))" InsertCommand="INSERT INTO [TareaGenerica] ([codigo], [descripcion], [codAsig], [hEstimadas], [explotacion], [tipoTarea]) VALUES (@codigo, @descripcion, @codAsig, @hEstimadas, @explotacion, @tipoTarea)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [TareaGenerica] WHERE ([codAsig] = @codAsig)" UpdateCommand="UPDATE [TareaGenerica] SET [descripcion] = @descripcion, [codAsig] = @codAsig, [hEstimadas] = @hEstimadas, [explotacion] = @explotacion, [tipoTarea] = @tipoTarea WHERE [codigo] = @original_codigo AND (([descripcion] = @original_descripcion) OR ([descripcion] IS NULL AND @original_descripcion IS NULL)) AND (([codAsig] = @original_codAsig) OR ([codAsig] IS NULL AND @original_codAsig IS NULL)) AND (([hEstimadas] = @original_hEstimadas) OR ([hEstimadas] IS NULL AND @original_hEstimadas IS NULL)) AND (([explotacion] = @original_explotacion) OR ([explotacion] IS NULL AND @original_explotacion IS NULL)) AND (([tipoTarea] = @original_tipoTarea) OR ([tipoTarea] IS NULL AND @original_tipoTarea IS NULL))">
+                <DeleteParameters>
+                    <asp:Parameter Name="original_codigo" Type="String" />
+                    <asp:Parameter Name="original_descripcion" Type="String" />
+                    <asp:Parameter Name="original_codAsig" Type="String" />
+                    <asp:Parameter Name="original_hEstimadas" Type="Int32" />
+                    <asp:Parameter Name="original_explotacion" Type="Boolean" />
+                    <asp:Parameter Name="original_tipoTarea" Type="String" />
+                </DeleteParameters>
+                <InsertParameters>
+                    <asp:Parameter Name="codigo" Type="String" />
+                    <asp:Parameter Name="descripcion" Type="String" />
+                    <asp:Parameter Name="codAsig" Type="String" />
+                    <asp:Parameter Name="hEstimadas" Type="Int32" />
+                    <asp:Parameter Name="explotacion" Type="Boolean" />
+                    <asp:Parameter Name="tipoTarea" Type="String" />
+                </InsertParameters>
                 <SelectParameters>
-                    <asp:ControlParameter ControlID="asignatura" Name="cod" PropertyName="SelectedValue" Type="String" />
+                    <asp:ControlParameter ControlID="asignatura" Name="codAsig" PropertyName="SelectedValue" Type="String" />
                 </SelectParameters>
                 <UpdateParameters>
-                    <asp:Parameter Name="descri" />
-                    <asp:Parameter Name="cod" />
-                    <asp:Parameter Name="horas" />
-                    <asp:Parameter Name="explo" />
-                    <asp:Parameter Name="tipo" />
+                    <asp:Parameter Name="descripcion" Type="String" />
+                    <asp:Parameter Name="codAsig" Type="String" />
+                    <asp:Parameter Name="hEstimadas" Type="Int32" />
+                    <asp:Parameter Name="explotacion" Type="Boolean" />
+                    <asp:Parameter Name="tipoTarea" Type="String" />
+                    <asp:Parameter Name="original_codigo" Type="String" />
+                    <asp:Parameter Name="original_descripcion" Type="String" />
+                    <asp:Parameter Name="original_codAsig" Type="String" />
+                    <asp:Parameter Name="original_hEstimadas" Type="Int32" />
+                    <asp:Parameter Name="original_explotacion" Type="Boolean" />
+                    <asp:Parameter Name="original_tipoTarea" Type="String" />
                 </UpdateParameters>
             </asp:SqlDataSource>
             <br />
