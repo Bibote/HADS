@@ -38,8 +38,8 @@
             <br />
             <asp:Button ID="Button1" runat="server" Text="Insertar Tarea" OnClick="Button1_Click" />
             <br />
+            <asp:LinkButton ID="LinkButton1" runat="server" PostBackUrl="~/tareasProfesor.aspx">Atras</asp:LinkButton>
             <br />
-            <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">Atras</asp:LinkButton>
         </div>
         <p>
             <asp:Label ID="Label1" runat="server" ForeColor="Red"></asp:Label>
