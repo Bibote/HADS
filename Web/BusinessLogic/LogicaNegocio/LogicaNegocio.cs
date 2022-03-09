@@ -9,7 +9,7 @@ namespace LogicaNegocio
 {
     public class LogicaNegocio
     {
-        private BaseDatos bd = new BaseDatos();
+        private BaseDatos.BaseDatos bd = new BaseDatos.BaseDatos();
         public LogicaNegocio()
         {
             

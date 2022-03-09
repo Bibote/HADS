@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data.SqlClient;
-using System.Data;
 
-namespace LogicaNegocio
+namespace BaseDatos
 {
-    class BaseDatos
+    public class BaseDatos
     {
         private static SqlConnection conexion = new SqlConnection();
         private static SqlCommand comando = new SqlCommand();
@@ -52,23 +52,23 @@ namespace LogicaNegocio
 
             return ("Enviado un email para verificar el usuario");
         }
-        public bool userExistCode(string mail,int code)
+        public bool userExistCode(string mail, int code)
         {
-            var st = "select count(*) from Usuario Where email='"+mail+"' and numconfir='"+code+"'";
+            var st = "select count(*) from Usuario Where email='" + mail + "' and numconfir='" + code + "'";
             comando = new SqlCommand(st, conexion);
             if (comando.ExecuteScalar().ToString().Equals("1"))
             {
                 return true;
             }
             else return false;
-   
+
         }
 
         public string validateUser(string mail, int code)
         {
-            if (userExistCode(mail,code))
+            if (userExistCode(mail, code))
             {
-                var st = "UPDATE Usuario SET confirmado='" +true+ "'  Where email='" + mail + "' and numconfir='" + code + "'";
+                var st = "UPDATE Usuario SET confirmado='" + true + "'  Where email='" + mail + "' and numconfir='" + code + "'";
                 int numregs;
                 comando = new SqlCommand(st, conexion);
                 try
@@ -87,12 +87,13 @@ namespace LogicaNegocio
 
         public string logIn(string mail, string pass)
         {
-            string myString="vacio";
-            var st = "select * from Usuario Where email='" + mail + "' and pass='" + pass + "' and confirmado='"+true+"'";
+            string myString = "vacio";
+            var st = "select * from Usuario Where email='" + mail + "' and pass='" + pass + "' and confirmado='" + true + "'";
             comando = new SqlCommand(st, conexion);
 
-            SqlDataReader s =comando.ExecuteReader();
-            while (s.Read()) {
+            SqlDataReader s = comando.ExecuteReader();
+            while (s.Read())
+            {
                 myString = s.GetString(5);
             }
             s.Close();
@@ -113,11 +114,12 @@ namespace LogicaNegocio
 
         public string updatePassword(string email, string pass, int num)
         {
-            var st = "UPDATE Usuarios SET pass='" + pass + "' Where email='" + email + "' and codpass='"+num+"'";
+            var st = "UPDATE Usuarios SET pass='" + pass + "' Where email='" + email + "' and codpass='" + num + "'";
             try
             {
                 comando = new SqlCommand(st, conexion);
-                if (comando.ExecuteNonQuery().ToString().Equals("1")){
+                if (comando.ExecuteNonQuery().ToString().Equals("1"))
+                {
                     return "Contraseña cambiada";
                 }
                 return "Valores incorrectos";
@@ -137,12 +139,12 @@ namespace LogicaNegocio
             var st = "select codpass from Usuarios Where email='" + mail + "'";
             comando = new SqlCommand(st, conexion);
             return comando.ExecuteScalar().ToString();
-        
+
         }
 
         public String addTarea(string cod, string des, string codas, int horas, bool explo, string tipo)
         {
-        
+
 
             comando = new SqlCommand("addTarea", conexion);
             comando.CommandType = CommandType.StoredProcedure;
