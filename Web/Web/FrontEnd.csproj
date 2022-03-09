@@ -44,6 +44,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DataVisualization" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -68,6 +69,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AlumnoMain.aspx" />
+    <Content Include="Estadisticas.aspx" />
     <Content Include="insertarTarea.aspx" />
     <Content Include="profesor.aspx" />
     <Content Include="Registro.aspx" />
@@ -84,6 +86,13 @@
     </Compile>
     <Compile Include="AlumnoMain.aspx.designer.cs">
       <DependentUpon>AlumnoMain.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Estadisticas.aspx.cs">
+      <DependentUpon>Estadisticas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Estadisticas.aspx.designer.cs">
+      <DependentUpon>Estadisticas.aspx</DependentUpon>
     </Compile>
     <Compile Include="insertarTarea.aspx.cs">
       <DependentUpon>insertarTarea.aspx</DependentUpon>

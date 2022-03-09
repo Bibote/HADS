@@ -16,6 +16,7 @@
         <asp:Menu ID="Menu1" runat="server" OnMenuItemClick="Menu1_MenuItemClick">
             <Items>
                 <asp:MenuItem Text="Tareas" Value="tareasProfesor.aspx"></asp:MenuItem>
+                <asp:MenuItem Text="Ver horas alumnos" Value="Estadisticas.aspx"></asp:MenuItem>
             </Items>
         </asp:Menu>
     </form>

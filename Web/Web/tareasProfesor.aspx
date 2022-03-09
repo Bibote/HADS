@@ -11,7 +11,7 @@
     <form id="form1" runat="server">
         <div>
             Seleccionar Asignatura:<br />
-            <asp:DropDownList ID="asignatura" runat="server" DataSourceID="SqlDataSource1" DataTextField="codigo" DataValueField="codigo" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged" AutoPostBack="True">
+            <asp:DropDownList ID="asignatura" runat="server" DataSourceID="SqlDataSource1" DataTextField="codigo" DataValueField="codigo" AutoPostBack="True">
             </asp:DropDownList>
             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:HADS2206ConnectionString %>" SelectCommand="SELECT [codigo] FROM [Asignatura]"></asp:SqlDataSource>
             <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="codigo" DataSourceID="SqlDataSource2">
@@ -59,7 +59,7 @@
                     <asp:Parameter Name="original_tipoTarea" Type="String" />
                 </UpdateParameters>
             </asp:SqlDataSource>
-            <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Añadir Tarea" />
+            <asp:Button ID="Button1" runat="server" Text="Añadir Tarea" OnClick="Button1_Click1" />
             <br />
         </div>
         <p>
