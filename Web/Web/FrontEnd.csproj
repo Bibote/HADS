@@ -157,9 +157,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BusinessLogic\LogicaNegocio\BackEnd.csproj">
+    <ProjectReference Include="..\BusinessLogic\LogicaNegocio\LogicaNegocio.csproj">
       <Project>{bc9a4f5b-edd8-449b-b35e-add4cf93f3fd}</Project>
-      <Name>BackEnd</Name>
+      <Name>LogicaNegocio</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

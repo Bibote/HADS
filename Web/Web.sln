@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.32106.194
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrontEnd", "Web\FrontEnd.csproj", "{FA2674CE-9E46-477F-9DF6-80EB66103DBC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackEnd", "BusinessLogic\LogicaNegocio\BackEnd.csproj", "{BC9A4F5B-EDD8-449B-B35E-ADD4CF93F3FD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogicaNegocio", "BusinessLogic\LogicaNegocio\LogicaNegocio.csproj", "{BC9A4F5B-EDD8-449B-B35E-ADD4CF93F3FD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaseDatos", "BaseDatos\BaseDatos.csproj", "{F093BAFB-698A-474C-996A-4812B515E0A3}"
 EndProject
