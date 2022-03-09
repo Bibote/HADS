@@ -59,8 +59,12 @@
                     <asp:Parameter Name="original_tipoTarea" Type="String" />
                 </UpdateParameters>
             </asp:SqlDataSource>
+            <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Añadir Tarea" />
             <br />
         </div>
+        <p>
+            <asp:LinkButton ID="LinkButton1" runat="server" PostBackUrl="~/profesor.aspx">Atras</asp:LinkButton>
+        </p>
     </form>
 </body>
 </html>

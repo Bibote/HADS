@@ -18,5 +18,10 @@ namespace Web
         {
            // Response.Redirect("tareasProfesor.aspx?param=DropDownList1.SelectedValue");
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("insertarTarea.aspx");
+        }
     }
 }
