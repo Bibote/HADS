@@ -11,6 +11,7 @@
     <form id="form1" runat="server">
         <div>
             <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+            <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">Cerrar Sesión</asp:LinkButton>
         </div>
         <asp:Menu ID="Menu1" runat="server" OnMenuItemClick="Menu1_MenuItemClick">
             <Items>
