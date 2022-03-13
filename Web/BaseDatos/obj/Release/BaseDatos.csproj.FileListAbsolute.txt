@@ -1,0 +1,6 @@
+C:\Users\milla\Desktop\Uni\Tercero\HADS\HADS\Web\BaseDatos\bin\Release\BaseDatos.dll
+C:\Users\milla\Desktop\Uni\Tercero\HADS\HADS\Web\BaseDatos\bin\Release\BaseDatos.pdb
+C:\Users\milla\Desktop\Uni\Tercero\HADS\HADS\Web\BaseDatos\obj\Release\BaseDatos.csproj.AssemblyReference.cache
+C:\Users\milla\Desktop\Uni\Tercero\HADS\HADS\Web\BaseDatos\obj\Release\BaseDatos.csproj.CoreCompileInputs.cache
+C:\Users\milla\Desktop\Uni\Tercero\HADS\HADS\Web\BaseDatos\obj\Release\BaseDatos.dll
+C:\Users\milla\Desktop\Uni\Tercero\HADS\HADS\Web\BaseDatos\obj\Release\BaseDatos.pdb

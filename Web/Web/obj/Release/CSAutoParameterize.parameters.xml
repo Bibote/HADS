@@ -1,2 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<parameters />
+<parameters>
+  <parameter name="HADS2206ConnectionString-Web.config Connection String" description="HADS2206ConnectionString Cadena de conexión que usa la aplicación en web.config para obtener acceso a la base de datos." defaultValue="Data Source=tcp:hads22062.database.windows.net,1433;Initial Catalog=HADS2206;Persist Security Info=True;User ID=adminpotente;Password=contraseña8-" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\milla\\Desktop\\Uni\\Tercero\\HADS\\HADS\\Web\\Web\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='HADS2206ConnectionString']/@connectionString" />
+  </parameter>
+</parameters>

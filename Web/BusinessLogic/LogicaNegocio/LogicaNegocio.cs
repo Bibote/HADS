@@ -4,8 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Net.Mail;
-using System.Data;
-using System.Data.SqlClient;
 
 namespace LogicaNegocio
 {
@@ -38,14 +36,6 @@ namespace LogicaNegocio
             catch (Exception ex)
             {
             }
-        }
-
-        public SqlDataAdapter todasLasTareas()
-        {
-            bd.conectar();
-            SqlDataAdapter auxDataAdapter = bd.collecionDeTareas();
-            bd.cerrarconexion();
-            return auxDataAdapter;
         }
 
         public string storeUser(string mail, string nombre, string apellidos, int num, bool confimado, string tipo, string pass, int codpass)
@@ -107,24 +97,6 @@ namespace LogicaNegocio
             string s = bd.addTarea(cod, des, codas, horas, explo, tipo);
             bd.cerrarconexion();
             return s;
-        }
-
-        public DataSet obtainAlumnoAsignaturas(string emailaux)
-        {
-            bd.conectar();
-            DataSet dataset1 = bd.obtenerAsignaturasAlumno(emailaux);
-            bd.cerrarconexion();
-
-            return dataset1;
-        }
-
-        public DataSet obtainAlumnoTareas(string emailaux)
-        {
-            bd.conectar();
-            DataSet dataset2 = bd.obtenerTareasAlumno(emailaux);
-            bd.cerrarconexion();
-
-            return dataset2;
         }
 
     }

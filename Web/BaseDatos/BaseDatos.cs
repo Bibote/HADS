@@ -16,7 +16,6 @@ namespace BaseDatos
         {
 
         }
-
         public string conectar()
         {
             try
@@ -39,7 +38,7 @@ namespace BaseDatos
 
         public String addUser(string mail, string nombre, string apellidos, int num, bool confimado, string tipo, string pass, int codpass)
         {
-            var st = "insert into Usuario values ('" + mail + " ','" + nombre + " ','" + apellidos + " ','" + num + " ','" + confimado + " ','" + tipo + " ','" + pass + " ','" + codpass + " ')";
+            var st = "insert into Usuario values ('" + mail + "','" + nombre + "','" + apellidos + "','" + num + "','" + confimado + "','" + tipo + "','" + pass + "','" + codpass + "')";
             int numregs;
             comando = new SqlCommand(st, conexion);
             try
@@ -53,15 +52,6 @@ namespace BaseDatos
 
             return ("Enviado un email para verificar el usuario");
         }
-
-        public SqlDataAdapter collecionDeTareas()
-        {
-            String query3 = "select * from EstudianteTarea";
-            SqlDataAdapter dataAdapter = new SqlDataAdapter(query3, conexion);
-
-            return dataAdapter;
-        }
-
         public bool userExistCode(string mail, int code)
         {
             var st = "select count(*) from Usuario Where email='" + mail + "' and numconfir='" + code + "'";
@@ -98,7 +88,7 @@ namespace BaseDatos
         public string logIn(string mail, string pass)
         {
             string myString = "vacio";
-            var st = "select * from Usuario Where email='" + mail + "' and pass='" + pass + "' and confirmado='" + true + "'";
+            var st = "select * from Usuario Where email='"+mail+"'and pass='"+pass+"'and confirmado='"+true+"'";
             comando = new SqlCommand(st, conexion);
 
             SqlDataReader s = comando.ExecuteReader();
@@ -124,7 +114,7 @@ namespace BaseDatos
 
         public string updatePassword(string email, string pass, int num)
         {
-            var st = "UPDATE Usuarios SET pass='" + pass + "' Where email='" + email + "' and codpass='" + num + "'";
+            var st = "UPDATE Usuario SET pass='" + pass + "' Where email='" + email + "' and codpass='" + num + "'";
             try
             {
                 comando = new SqlCommand(st, conexion);
@@ -146,7 +136,7 @@ namespace BaseDatos
 
         public string getNumPass(string mail)
         {
-            var st = "select codpass from Usuarios Where email='" + mail + "'";
+            var st = "select codpass from Usuario Where email='" + mail + "'";
             comando = new SqlCommand(st, conexion);
             return comando.ExecuteScalar().ToString();
 
@@ -177,29 +167,6 @@ namespace BaseDatos
             return ("Tarea añadida");
         }
 
-        public DataSet obtenerAsignaturasAlumno(string email1)
-        {
-            String query1 = "Select codigo FROM Asignatura where codigo in ( Select codigoAsig from GrupoClase where codigo in ( Select grupo from EstudianteGrupo where email = '" + email1 + "'))";
-            SqlDataAdapter dataAdapter = new SqlDataAdapter(query1, conexion);
-
-            DataSet dataSet1 = new DataSet();
-
-            dataAdapter.Fill(dataSet1);
-
-            return dataSet1;
-        }
-
-        public DataSet obtenerTareasAlumno(string email1)
-        {
-            String query2 = "select * from TareaGenerica where explotacion = 1 and codigo not in (select codTarea from EstudianteTarea where email = '" + email1 +"')";
-            SqlDataAdapter dataAdapter = new SqlDataAdapter(query2, conexion);
-
-            DataSet dataset2 = new DataSet();
-
-            dataAdapter.Fill(dataset2);
-
-            return dataset2;
-        }
 
 
 
