@@ -43,7 +43,7 @@
             <br />
             <asp:Button ID="Button1" runat="server" Text="Insertar Tarea" OnClick="Button1_Click" />
             <br />
-            <asp:LinkButton ID="LinkButton1" runat="server" PostBackUrl="~/tareasProfesor.aspx">Atras</asp:LinkButton>
+            <asp:LinkButton ID="LinkButton1" runat="server" PostBackUrl="~/tareasProfesor.aspx" ValidationGroup="atras">Atras</asp:LinkButton>
             <br />
         </div>
         <p>
