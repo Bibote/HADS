@@ -23,13 +23,13 @@ namespace Web
         {
             var logica = new LogicaNegocio.LogicaNegocio();
             string s = logica.logIn(TextBox1.Text, TextBox2.Text);
-            if (Equals(s, "Alumno ")){
+            if (Equals(s, "Alumno")){
                 Session["Nombre"] = TextBox1.Text;
                 Session["Tipo"] = s;
 
                 Response.Redirect("alumnoMain.aspx");
             }
-            else if(s.Equals("Profesor "))
+            else if(s.Equals("Profesor"))
             {
                 Session["Nombre"] = TextBox1.Text;
                 Session["Tipo"] = s;

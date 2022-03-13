@@ -11,11 +11,16 @@
     <form id="form1" runat="server">
         <div>
             Seleccionar Asignatura:<br />
-            <asp:DropDownList ID="asignatura" runat="server">
+            <asp:DropDownList ID="asignatura" runat="server" AutoPostBack="True" OnSelectedIndexChanged="asignatura_SelectedIndexChanged">
             </asp:DropDownList>
             <br />
             <br />
+            Tabla de tareas:<br />
+            <br />
             <asp:GridView ID="GridView1" runat="server">
+                <Columns>
+                    <asp:ButtonField ButtonType="Button" CommandName="Select" Text="Seleccionar" />
+                </Columns>
             </asp:GridView>
 
         </div>

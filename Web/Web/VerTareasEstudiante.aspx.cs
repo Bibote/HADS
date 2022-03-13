@@ -20,7 +20,32 @@ namespace Web
             }
         }
 
-        protected void asignatura_SelectedIndexChanged(object sender, EventArgs e)
+        private void initializeDropDownList()
+        {
+            var businessLogic = new LogicaNegocio.LogicaNegocio();
+            DataSet dataset1 = businessLogic.obtainAlumnoAsignaturas((string)Session["Nombre"]);
+            asignatura.DataSource = dataset1;
+            asignatura.DataTextField = "codigo";
+            asignatura.DataValueField = "codigo";
+            asignatura.DataBind();
+            
+        }
+
+        private void initializeGridView()
+        {
+            var businessLogic = new LogicaNegocio.LogicaNegocio();
+            DataSet dataset1 = businessLogic.obtainAlumnoTareas((string)Session["nombre"]);
+
+            DataTable dataTable1 = new DataTable();
+
+            dataTable1 = dataset1.Tables[0];
+
+            Session["dataTableDeTareas"] = dataTable1;
+
+            filtracion();
+        }
+
+        private void filtracion()
         {
             DataTable dataTable2 = (DataTable)Session["dataTableDeTareas"];
             DataView dataView1 = new DataView(dataTable2);
@@ -36,32 +61,9 @@ namespace Web
             GridView1.DataBind();
         }
 
-        private void initializeDropDownList()
+        protected void asignatura_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var businessLogic = new LogicaNegocio.LogicaNegocio();
-            DataSet dataset1 = businessLogic.obtainAlumnoAsignaturas((string)Session["Nombre"]);
-            asignatura.DataSource = dataset1;
-            asignatura.DataTextField = "codigo";
-            asignatura.DataValueField = "codigo";
-            asignatura.DataBind();
+            filtracion();
         }
-
-        private void initializeGridView()
-        {
-            var businessLogic = new LogicaNegocio.LogicaNegocio();
-            DataSet dataset1 = businessLogic.obtainAlumnoTareas((string)Session["nombre"]);
-
-            DataTable dataTable1 = new DataTable();
-
-            dataTable1 = dataset1.Tables[0];
-
-            Session["dataTableDeTareas"] = dataTable1;
-
-
-
-
-
-        }
-
     }
 }

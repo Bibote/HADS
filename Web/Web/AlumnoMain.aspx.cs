@@ -11,8 +11,7 @@ namespace Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Label1.Text = (string)Session["Nombre"];
-            Label2.Text = (string)Session["Tipo"];
+
         }
     }
 }

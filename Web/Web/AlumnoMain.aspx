@@ -10,13 +10,11 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            Main Alumno</div>
-        <asp:Menu ID="Menu1" runat="server" OnMenuItemClick="Menu1_MenuItemClick">
-            <Items>
-                <asp:MenuItem Text="Tareas" Value="VerTareasEstudiante.aspx"></asp:MenuItem>
-                <asp:MenuItem Text="Ver horas alumnos" Value="Estadisticas.aspx"></asp:MenuItem>
-            </Items>
-        </asp:Menu>
+            Main Alumno<br />
+            <asp:LinkButton ID="LinkButton1" runat="server" PostBackUrl="~/VerTareasEstudiante.aspx">Tareas</asp:LinkButton>
+            <br />
+            <asp:LinkButton ID="LinkButton2" runat="server">Ver horas alumnos</asp:LinkButton>
+        </div>
     </form>
 </body>
 </html>
