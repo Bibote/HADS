@@ -79,6 +79,7 @@
     <Content Include="CambiarContrasena.aspx" />
     <Content Include="confirmar.aspx" />
     <Content Include="VerTareasEstudiante.aspx" />
+    <Content Include="InstanciarTarea.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AlumnoMain.aspx.cs">
@@ -151,6 +152,13 @@
     </Compile>
     <Compile Include="VerTareasEstudiante.aspx.designer.cs">
       <DependentUpon>VerTareasEstudiante.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InstanciarTarea.aspx.cs">
+      <DependentUpon>InstanciarTarea.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InstanciarTarea.aspx.designer.cs">
+      <DependentUpon>InstanciarTarea.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

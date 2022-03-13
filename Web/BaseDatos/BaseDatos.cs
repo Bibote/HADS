@@ -53,6 +53,15 @@ namespace BaseDatos
 
             return ("Enviado un email para verificar el usuario");
         }
+
+        public SqlDataAdapter collecionDeTareas()
+        {
+            String query3 = "select * from EstudianteTarea";
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(query3, conexion);
+
+            return dataAdapter;
+        }
+
         public bool userExistCode(string mail, int code)
         {
             var st = "select count(*) from Usuario Where email='" + mail + "' and numconfir='" + code + "'";

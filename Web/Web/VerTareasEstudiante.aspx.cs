@@ -65,5 +65,18 @@ namespace Web
         {
             filtracion();
         }
+
+        protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName == "Select")
+            {
+                int rowIndex = Convert.ToInt32(e.CommandArgument);
+                GridViewRow row = GridView1.Rows[rowIndex];
+                string codigoaux = row.Cells[1].Text;
+                string hestimadas = row.Cells[3].Text;
+                Response.Redirect("InstanciarTarea.aspx?codigo="+codigoaux+"&he="+hestimadas);
+            }
+        }
+
     }
 }

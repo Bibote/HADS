@@ -17,7 +17,7 @@
             <br />
             Tabla de tareas:<br />
             <br />
-            <asp:GridView ID="GridView1" runat="server">
+            <asp:GridView ID="GridView1" runat="server" OnRowCommand="GridView1_RowCommand">
                 <Columns>
                     <asp:ButtonField ButtonType="Button" CommandName="Select" Text="Seleccionar" />
                 </Columns>

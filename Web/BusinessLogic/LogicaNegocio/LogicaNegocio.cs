@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Net.Mail;
 using System.Data;
+using System.Data.SqlClient;
 
 namespace LogicaNegocio
 {
@@ -37,6 +38,14 @@ namespace LogicaNegocio
             catch (Exception ex)
             {
             }
+        }
+
+        public SqlDataAdapter todasLasTareas()
+        {
+            bd.conectar();
+            SqlDataAdapter auxDataAdapter = bd.collecionDeTareas();
+            bd.cerrarconexion();
+            return auxDataAdapter;
         }
 
         public string storeUser(string mail, string nombre, string apellidos, int num, bool confimado, string tipo, string pass, int codpass)
