@@ -11,10 +11,12 @@
     <form id="form1" runat="server">
         <div>
             Main Alumno</div>
-        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
-        <p>
-            <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
-        </p>
+        <asp:Menu ID="Menu1" runat="server" OnMenuItemClick="Menu1_MenuItemClick">
+            <Items>
+                <asp:MenuItem Text="Tareas" Value="VerTareasEstudiante.aspx"></asp:MenuItem>
+                <asp:MenuItem Text="Ver horas alumnos" Value="Estadisticas.aspx"></asp:MenuItem>
+            </Items>
+        </asp:Menu>
     </form>
 </body>
 </html>

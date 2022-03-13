@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Net.Mail;
+using System.Data;
 
 namespace LogicaNegocio
 {
@@ -97,6 +98,24 @@ namespace LogicaNegocio
             string s = bd.addTarea(cod, des, codas, horas, explo, tipo);
             bd.cerrarconexion();
             return s;
+        }
+
+        public DataSet obtainAlumnoAsignaturas(string emailaux)
+        {
+            bd.conectar();
+            DataSet dataset1 = bd.obtenerAsignaturasAlumno(emailaux);
+            bd.cerrarconexion();
+
+            return dataset1;
+        }
+
+        public DataSet obtainAlumnoTareas(string emailaux)
+        {
+            bd.conectar();
+            DataSet dataset2 = bd.obtenerTareasAlumno(emailaux);
+            bd.cerrarconexion();
+
+            return dataset2;
         }
 
     }
