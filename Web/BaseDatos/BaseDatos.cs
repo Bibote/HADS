@@ -167,8 +167,37 @@ namespace BaseDatos
             return ("Tarea añadida");
         }
 
+        public SqlDataAdapter collecionDeTareas()
+        {
+            String query3 = "select * from EstudianteTarea";
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(query3, conexion);
 
+            return dataAdapter;
+        }
 
+        public DataSet obtenerAsignaturasAlumno(string email1)
+        {
+            String query1 = "Select codigo FROM Asignatura where codigo in ( Select codigoAsig from GrupoClase where codigo in ( Select grupo from EstudianteGrupo where email = '" + email1 + "'))";
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(query1, conexion);
+
+            DataSet dataSet1 = new DataSet();
+
+            dataAdapter.Fill(dataSet1);
+
+            return dataSet1;
+        }
+
+        public DataSet obtenerTareasAlumno(string email1)
+        {
+            String query2 = "select * from TareaGenerica where explotacion = 1 and codigo not in (select codTarea from EstudianteTarea where email = '" + email1 + "')";
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(query2, conexion);
+
+            DataSet dataset2 = new DataSet();
+
+            dataAdapter.Fill(dataset2);
+
+            return dataset2;
+        }
 
     }
 }

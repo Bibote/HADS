@@ -10,11 +10,9 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            Main Alumno</div>
-        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
-        <p>
-            <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
-        </p>
+            Main Alumno<br />
+            <asp:LinkButton ID="LinkButton1" runat="server" PostBackUrl="~/VerTareasEstudiante.aspx">Tareas</asp:LinkButton>
+        </div>
     </form>
 </body>
 </html>
