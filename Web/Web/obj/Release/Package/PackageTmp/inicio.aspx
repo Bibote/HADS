@@ -21,11 +21,9 @@
             <asp:TextBox ID="TextBox2" runat="server" ValidationGroup="sesion" TextMode="Password"></asp:TextBox>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TextBox2" ErrorMessage="*" ForeColor="Red" ValidationGroup="sesion"></asp:RequiredFieldValidator>
             <br />
-            <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
             <br />
             <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="Iniciar Sesion" ValidationGroup="sesion" />
             <br />
-            <asp:Label ID="Label3" runat="server" Text="Label"></asp:Label>
             <br />
             <asp:Label ID="Label1" runat="server" ForeColor="Red"></asp:Label>
             <br />
