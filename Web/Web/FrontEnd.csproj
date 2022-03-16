@@ -78,6 +78,8 @@
     <Content Include="inicio.aspx" />
     <Content Include="CambiarContrasena.aspx" />
     <Content Include="confirmar.aspx" />
+    <Content Include="InstanciarTarea.aspx" />
+    <Content Include="VerTareasEstudiante.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AlumnoMain.aspx.cs">
@@ -144,11 +146,27 @@
     <Compile Include="tareasProfesor.aspx.designer.cs">
       <DependentUpon>tareasProfesor.aspx</DependentUpon>
     </Compile>
+    <Compile Include="InstanciarTarea.aspx.cs">
+      <DependentUpon>InstanciarTarea.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InstanciarTarea.aspx.designer.cs">
+      <DependentUpon>InstanciarTarea.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VerTareasEstudiante.aspx.cs">
+      <DependentUpon>VerTareasEstudiante.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VerTareasEstudiante.aspx.designer.cs">
+      <DependentUpon>VerTareasEstudiante.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
     <None Include="Properties\PublishProfiles\hads22-062 - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\hads22-062 - FTP1.pubxml" />
     <None Include="Properties\PublishProfiles\hads22-062 - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\hads22-062 - Web Deploy1.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -161,6 +179,9 @@
       <Project>{bc9a4f5b-edd8-449b-b35e-add4cf93f3fd}</Project>
       <Name>LogicaNegocio</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
