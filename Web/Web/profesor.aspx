@@ -17,6 +17,8 @@
             <Items>
                 <asp:MenuItem Text="Tareas" Value="tareasProfesor.aspx"></asp:MenuItem>
                 <asp:MenuItem Text="Ver horas alumnos" Value="Estadisticas.aspx"></asp:MenuItem>
+                <asp:MenuItem Text="Importar tareas" Value="importartareas.aspx"></asp:MenuItem>
+                <asp:MenuItem Text="Exportar tareas" Value="exportartareas.aspx"></asp:MenuItem>
             </Items>
         </asp:Menu>
     </form>

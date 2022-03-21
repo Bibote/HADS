@@ -11,7 +11,9 @@ namespace Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            var businessLogic = new LogicaNegocio.LogicaNegocio();
             Label1.Text = "Bienvenido! " + Session["Nombre"];
+            Session["asignaturas"] = businessLogic.getAsignaturasProfe(Session["Nombre"].ToString());
         }
 
         protected void Menu1_MenuItemClick(object sender, MenuEventArgs e)

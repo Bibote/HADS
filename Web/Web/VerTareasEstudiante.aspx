@@ -21,6 +21,9 @@
                 <Columns>
                     <asp:ButtonField ButtonType="Button" CommandName="Select" Text="Seleccionar" />
                 </Columns>
+                <EmptyDataTemplate>
+                    No hay tareas de esa asignatura
+                </EmptyDataTemplate>
             </asp:GridView>
         </div>
     </form>

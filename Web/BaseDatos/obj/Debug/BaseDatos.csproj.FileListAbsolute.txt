@@ -4,3 +4,9 @@ C:\Users\Mike\Documents\GitHub\HADS\Web\BaseDatos\obj\Debug\BaseDatos.csproj.Ass
 C:\Users\Mike\Documents\GitHub\HADS\Web\BaseDatos\obj\Debug\BaseDatos.csproj.CoreCompileInputs.cache
 C:\Users\Mike\Documents\GitHub\HADS\Web\BaseDatos\obj\Debug\BaseDatos.dll
 C:\Users\Mike\Documents\GitHub\HADS\Web\BaseDatos\obj\Debug\BaseDatos.pdb
+C:\Users\milla\Desktop\Uni\Tercero\HADS\HADS\Web\BaseDatos\bin\Debug\BaseDatos.dll
+C:\Users\milla\Desktop\Uni\Tercero\HADS\HADS\Web\BaseDatos\bin\Debug\BaseDatos.pdb
+C:\Users\milla\Desktop\Uni\Tercero\HADS\HADS\Web\BaseDatos\obj\Debug\BaseDatos.csproj.AssemblyReference.cache
+C:\Users\milla\Desktop\Uni\Tercero\HADS\HADS\Web\BaseDatos\obj\Debug\BaseDatos.csproj.CoreCompileInputs.cache
+C:\Users\milla\Desktop\Uni\Tercero\HADS\HADS\Web\BaseDatos\obj\Debug\BaseDatos.dll
+C:\Users\milla\Desktop\Uni\Tercero\HADS\HADS\Web\BaseDatos\obj\Debug\BaseDatos.pdb

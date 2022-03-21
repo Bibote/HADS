@@ -125,6 +125,22 @@ namespace LogicaNegocio
 
             return dataset2;
         }
+        public DataSet getTareas()
+        {
+            bd.conectar();
+            DataSet datos = bd.getTareas();
+            bd.cerrarconexion();
 
+            return datos;
+        }
+
+        public DataSet getAsignaturasProfe(string mail)
+        {
+            bd.conectar();
+            DataSet datos = bd.getAsignaturasProfe(mail);
+            bd.cerrarconexion();
+
+            return datos;
+        }
     }
 }

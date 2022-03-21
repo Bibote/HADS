@@ -69,7 +69,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AlumnoMain.aspx" />
+    <Content Include="App_Data\HAS.xml" />
+    <Content Include="App_Data\SEG.xml" />
+    <Content Include="App_Data\VerTablaTareas.xsl">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Estadisticas.aspx" />
+    <Content Include="exportartareas.aspx" />
+    <Content Include="importartareas.aspx" />
     <Content Include="insertarTarea.aspx" />
     <Content Include="profesor.aspx" />
     <Content Include="Registro.aspx" />
@@ -95,6 +102,20 @@
     </Compile>
     <Compile Include="Estadisticas.aspx.designer.cs">
       <DependentUpon>Estadisticas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="exportartareas.aspx.cs">
+      <DependentUpon>exportartareas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="exportartareas.aspx.designer.cs">
+      <DependentUpon>exportartareas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="importartareas.aspx.cs">
+      <DependentUpon>importartareas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="importartareas.aspx.designer.cs">
+      <DependentUpon>importartareas.aspx</DependentUpon>
     </Compile>
     <Compile Include="insertarTarea.aspx.cs">
       <DependentUpon>insertarTarea.aspx</DependentUpon>
@@ -162,6 +183,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="App_Data\tareas.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\PublishProfiles\hads22-062 - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\hads22-062 - FTP1.pubxml" />
@@ -180,9 +204,7 @@
       <Name>LogicaNegocio</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
