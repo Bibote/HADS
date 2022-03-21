@@ -10,6 +10,7 @@
     <UseGlobalApplicationHostFile />
     <LastActiveSolutionConfig>Debug|Any CPU</LastActiveSolutionConfig>
     <NameOfLastUsedPublishProfile>C:\Users\milla\Desktop\Uni\Tercero\HADS\HADS\Web\Web\Properties\PublishProfiles\hads22-062 - Web Deploy.pubxml</NameOfLastUsedPublishProfile>
+    <ProjectView>ShowAllFiles</ProjectView>
   </PropertyGroup>
   <ProjectExtensions>
     <VisualStudio>

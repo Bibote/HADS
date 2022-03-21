@@ -21,10 +21,14 @@
             <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <br />
-            Asignatura:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="nombre" DataValueField="codigo" Height="33px">
+            Asignatura:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="codigoGrupo" DataValueField="codigoGrupo" Height="33px">
             </asp:DropDownList>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="DropDownList1" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:HADS2206ConnectionString %>" SelectCommand="SELECT * FROM [Asignatura]"></asp:SqlDataSource>
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:HADS2206ConnectionString %>" SelectCommand="SELECT [codigoGrupo] FROM [ProfesorGrupo] WHERE ([codigoGrupo] = @codigoGrupo)">
+                <SelectParameters>
+                    <asp:SessionParameter Name="codigoGrupo" SessionField="nombre" Type="String" />
+                </SelectParameters>
+            </asp:SqlDataSource>
             <br />
             Horas Estimadas:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:TextBox ID="TextBox4" runat="server" TextMode="Number"></asp:TextBox>
@@ -43,7 +47,7 @@
             <br />
             <asp:Button ID="Button1" runat="server" Text="Insertar Tarea" OnClick="Button1_Click" />
             <br />
-            <asp:LinkButton ID="LinkButton1" runat="server" PostBackUrl="~/tareasProfesor.aspx">Atras</asp:LinkButton>
+            <asp:LinkButton ID="LinkButton1" runat="server" PostBackUrl="~/tareasProfesor.aspx" ValidationGroup="atras">Atras</asp:LinkButton>
             <br />
         </div>
         <p>

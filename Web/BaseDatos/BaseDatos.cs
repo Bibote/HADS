@@ -133,7 +133,6 @@ namespace BaseDatos
 
         }
 
-
         public string getNumPass(string mail)
         {
             var st = "select codpass from Usuario Where email='" + mail + "'";
@@ -199,5 +198,27 @@ namespace BaseDatos
             return dataset2;
         }
 
+        public DataSet getTareas()
+        {
+            string query = "Select * from TareaGenerica";
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(query, conexion);
+
+            DataSet dataset = new DataSet();
+
+            dataAdapter.Fill(dataset);
+            return dataset;
+        }
+
+        public DataTable getAsignaturasProfe(string mail)
+        {
+            comando = new SqlCommand("getTareasProfe", conexion);
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("mail", new SqlParameter()).Value = mail;
+
+            int i = comando.ExecuteNonQuery();
+            DataTable datatable = new DataTable();
+            datatable.Load(comando.ExecuteReader());
+            return datatable;
+        }
     }
 }
