@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Xml;
 
 namespace Web
 {
@@ -28,14 +29,23 @@ namespace Web
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            DataSet xmlExport = new DataSet();
+            DataSet tareas = new DataSet();
             DataTable dt = dv.ToTable();
-
+            tareas.DataSetName="tareas";
+            dt.TableName = "tarea";
+            dt.Columns[0].ColumnMapping = MappingType.Attribute;
+            dt.Columns.RemoveAt(2);
+            dt.Columns[2].ColumnName = "hestimada";
+            dt.Columns[3].SetOrdinal(4);
+            dt.Columns[4].ColumnName = "tipotarea";
+            dt.Columns[2].ColumnName = "hestimadas";
             if (dt != null & dt.Rows.Count > 0)
             {
-                xmlExport.Tables.Add(dt);
+                tareas.Tables.Add(dt);
             }
-            xmlExport.WriteXml(Server.MapPath("App_Data/" + DropDownList1.SelectedValue + ".xml"));
+            
+            tareas.WriteXml(Server.MapPath("App_Data/" + DropDownList1.SelectedValue + ".xml"));
+            Label1.Text = "Tarea exportada";
 
 
 
@@ -52,21 +62,23 @@ namespace Web
             GridView1.DataBind();
         }
 
+
         private void cargardropdown()
         {
             DataSet bobi = (DataSet)Session["asignaturas"];
             DropDownList1.DataSource = bobi;
-            DropDownList1.DataTextField = "codAsig";
-            DropDownList1.DataValueField = "codAsig";
+            DropDownList1.DataTextField = "codigoAsig";
+            DropDownList1.DataValueField = "codigoAsig";
             try
             {
                 DropDownList1.DataBind();
             }
             catch
             {
-                Label1.Text =bobi.ToString();
+                Label1.Text = "Este profesor no tiene asignaturas";
             }
         }
+
 
         
     }

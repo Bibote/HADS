@@ -13,7 +13,7 @@ namespace Web
         {
             var businessLogic = new LogicaNegocio.LogicaNegocio();
             Label1.Text = "Bienvenido! " + Session["Nombre"];
-            Session["asignaturas"] = businessLogic.getAsignaturasProfe(Session["Nombre"].ToString());
+            Session["asignaturas"] = businessLogic.getAsignaturasProfe((string)Session["Nombre"]);
         }
 
         protected void Menu1_MenuItemClick(object sender, MenuEventArgs e)

@@ -1,27 +1,21 @@
 <?xml version="1.0" standalone="yes"?>
-<NewDataSet>
-  <Table>
-    <codigo>adios</codigo>
+<tareas>
+  <tarea codigo="adios">
     <descripcion>hola</descripcion>
-    <codAsig>ADSI</codAsig>
-    <hEstimadas>1</hEstimadas>
-    <explotacion>false</explotacion>
+    <hestimadas>1</hestimadas>
     <tipoTarea>Laboratorio</tipoTarea>
-  </Table>
-  <Table>
-    <codigo>ADSI22</codigo>
+    <tipotarea>false</tipotarea>
+  </tarea>
+  <tarea codigo="ADSI22">
     <descripcion>prueba</descripcion>
-    <codAsig>ADSI</codAsig>
-    <hEstimadas>23</hEstimadas>
-    <explotacion>true</explotacion>
+    <hestimadas>23</hestimadas>
     <tipoTarea>Trabajo</tipoTarea>
-  </Table>
-  <Table>
-    <codigo>hola</codigo>
+    <tipotarea>true</tipotarea>
+  </tarea>
+  <tarea codigo="hola">
     <descripcion>prueba</descripcion>
-    <codAsig>ADSI</codAsig>
-    <hEstimadas>2</hEstimadas>
-    <explotacion>false</explotacion>
+    <hestimadas>2</hestimadas>
     <tipoTarea>Laboratorio</tipoTarea>
-  </Table>
-</NewDataSet>
+    <tipotarea>false</tipotarea>
+  </tarea>
+</tareas>

@@ -10,11 +10,11 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <asp:DropDownList ID="DropDownList1" runat="server">
+            <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True">
             </asp:DropDownList>
             <asp:GridView ID="GridView1" runat="server">
             </asp:GridView>
-            <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+            <asp:Label ID="Label1" runat="server"></asp:Label>
         </div>
         <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Exportar" />
         <p>
