@@ -134,10 +134,10 @@ namespace LogicaNegocio
             return datos;
         }
 
-        public DataTable getAsignaturasProfe(string mail)
+        public DataSet getAsignaturasProfe(string mail)
         {
             bd.conectar();
-            DataTable datos = bd.getAsignaturasProfe(mail);
+            DataSet datos = bd.getAsignaturasProfe(mail);
             bd.cerrarconexion();
 
             return datos;

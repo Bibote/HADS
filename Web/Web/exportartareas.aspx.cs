@@ -54,7 +54,7 @@ namespace Web
 
         private void cargardropdown()
         {
-            DataTable bobi = (DataTable)Session["asignaturas"];
+            DataSet bobi = (DataSet)Session["asignaturas"];
             DropDownList1.DataSource = bobi;
             DropDownList1.DataTextField = "codAsig";
             DropDownList1.DataValueField = "codAsig";
@@ -64,7 +64,7 @@ namespace Web
             }
             catch
             {
-                Label1.Text = Session["asignaturas"].ToString();
+                Label1.Text =bobi.ToString();
             }
         }
 

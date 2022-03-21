@@ -209,16 +209,18 @@ namespace BaseDatos
             return dataset;
         }
 
-        public DataTable getAsignaturasProfe(string mail)
+        public DataSet getAsignaturasProfe(string mail)
         {
-            comando = new SqlCommand("getTareasProfe", conexion);
+            comando = new SqlCommand("getTareasProfesor", conexion);
             comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.AddWithValue("mail", new SqlParameter()).Value = mail;
+            SqlDataAdapter sda = new SqlDataAdapter(comando);
+            DataSet dataset = new DataSet();
+            sda.Fill(dataset);
 
-            int i = comando.ExecuteNonQuery();
-            DataTable datatable = new DataTable();
-            datatable.Load(comando.ExecuteReader());
-            return datatable;
+            return dataset;
+
+
         }
     }
 }
