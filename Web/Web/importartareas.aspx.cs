@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.IO;
 using System.Linq;
 using System.Web;
@@ -15,6 +16,10 @@ namespace Web
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!Page.IsPostBack)
+            {
+                cargardropdown();
+            }
             if (DropDownList1.SelectedValue != "")
             {
                 if(File.Exists(Server.MapPath("App_Data/" + DropDownList1.SelectedValue + ".xml")))
@@ -31,6 +36,12 @@ namespace Web
             }
             
            
+        }
+        
+        protected void DropDownList1DataBound()
+        {
+
+
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -96,6 +107,21 @@ namespace Web
                     Label1.Text = "No existe un xml de esas asignaturas";
                 }
 
+            }
+        }
+        private void cargardropdown()
+        {
+            DataSet bobi = (DataSet)Session["asignaturas"];
+            DropDownList1.DataSource = bobi;
+            DropDownList1.DataTextField = "codigoAsig";
+            DropDownList1.DataValueField = "codigoAsig";
+            try
+            {
+                DropDownList1.DataBind();
+            }
+            catch
+            {
+                Label1.Text = "Este profesor no tiene asignaturas";
             }
         }
     }

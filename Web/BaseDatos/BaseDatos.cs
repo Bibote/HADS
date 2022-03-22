@@ -211,7 +211,7 @@ namespace BaseDatos
 
         public DataSet getAsignaturasProfe(string mail)
         {
-            comando = new SqlCommand("getTareasProfesor", conexion);
+            comando = new SqlCommand("getTareasProfe", conexion);
             comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.AddWithValue("mail", new SqlParameter()).Value = mail;
             SqlDataAdapter sda = new SqlDataAdapter(comando);
