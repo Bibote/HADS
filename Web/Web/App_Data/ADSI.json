@@ -1,0 +1,23 @@
+[
+  {
+    "codigo": "adios",
+    "descripcion": "hola",
+    "hestimadas": 1,
+    "tipoTarea": "Laboratorio",
+    "tipotarea": false
+  },
+  {
+    "codigo": "ADSI22",
+    "descripcion": "prueba",
+    "hestimadas": 23,
+    "tipoTarea": "Trabajo",
+    "tipotarea": true
+  },
+  {
+    "codigo": "hola",
+    "descripcion": "prueba",
+    "hestimadas": 2,
+    "tipoTarea": "Laboratorio",
+    "tipotarea": false
+  }
+]

@@ -16,7 +16,8 @@
             </asp:GridView>
             <asp:Label ID="Label1" runat="server"></asp:Label>
         </div>
-        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Exportar" />
+        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Exportar Xml" />
+        <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Exportar Json" />
         <p>
             <asp:LinkButton ID="LinkButton1" runat="server" PostBackUrl="~/profesor.aspx">Atras</asp:LinkButton>
         </p>

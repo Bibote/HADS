@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -23,23 +24,41 @@ namespace Web
         {
             var logica = new LogicaNegocio.LogicaNegocio();
             string nombre = TextBox1.Text;
-            string contrasena = TextBox2.Text;
+            string contrasena = logica.encriptar(TextBox2.Text);
 
             
             string s = logica.logIn(nombre,contrasena);
             if (Equals(s, "Alumno")){
                 Session["Nombre"] = nombre;
-                Session["Tipo"] = s;
+                FormsAuthentication.SetAuthCookie("Alumno", false);
 
-                Response.Redirect("alumnoMain.aspx");
+
+
+                Response.Redirect("alumnos/alumnoMain.aspx");
             }
             else if(s.Equals("Profesor"))
             {
                 Session["Nombre"] = nombre;
-                Session["Tipo"] = s;
+                FormsAuthentication.SetAuthCookie("Profesor", false);
+                if (string.Equals(nombre, "vadillo@ehu.es"))
+                {
+                    FormsAuthentication.SetAuthCookie("AdminCoor", false);
+                }
+              
 
-                Response.Redirect("profesor.aspx");
+                Response.Redirect("profes/profesor.aspx");
             }
+            else if (s.Equals("Admin"))
+            {
+                Session["Nombre"] = nombre;
+
+
+                  FormsAuthentication.SetAuthCookie("AdminCoor", false);
+
+
+                Response.Redirect("profes/profesor.aspx");
+            }
+
             else
             {
                 Label1.Text = "Email o contraseña incorrecta";

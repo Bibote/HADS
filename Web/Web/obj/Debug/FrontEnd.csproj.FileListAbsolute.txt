@@ -124,3 +124,5 @@ C:\Users\milla\Desktop\Uni\Tercero\HADS\HADS\Web\Web\obj\Debug\FrontEnd.csproj.C
 C:\Users\milla\Desktop\Uni\Tercero\HADS\HADS\Web\Web\obj\Debug\FrontEnd.csproj.CopyComplete
 C:\Users\milla\Desktop\Uni\Tercero\HADS\HADS\Web\Web\obj\Debug\Web.dll
 C:\Users\milla\Desktop\Uni\Tercero\HADS\HADS\Web\Web\obj\Debug\Web.pdb
+C:\Users\milla\Desktop\Uni\Tercero\HADS\HADS\Web\Web\bin\Newtonsoft.Json.dll
+C:\Users\milla\Desktop\Uni\Tercero\HADS\HADS\Web\Web\bin\Newtonsoft.Json.xml

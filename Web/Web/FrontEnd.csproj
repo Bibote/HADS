@@ -44,6 +44,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Web.DataVisualization" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -68,67 +72,75 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="AlumnoMain.aspx" />
+    <Content Include="profes\impoexpo\baneos.aspx" />
+    <Content Include="alumnos\AlumnoMain.aspx" />
     <Content Include="App_Data\HAS.xml" />
     <Content Include="App_Data\SEG.xml" />
     <Content Include="App_Data\VerTablaTareas.xsl">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Estadisticas.aspx" />
-    <Content Include="exportartareas.aspx" />
-    <Content Include="importartareas.aspx" />
-    <Content Include="insertarTarea.aspx" />
-    <Content Include="profesor.aspx" />
+    <Content Include="profes\Estadisticas.aspx" />
+    <Content Include="profes\impoexpo\exportartareas.aspx" />
+    <Content Include="profes\impoexpo\importartareas.aspx" />
+    <Content Include="profes\insertarTarea.aspx" />
+    <Content Include="profes\profesor.aspx" />
     <Content Include="Registro.aspx" />
-    <Content Include="tareasProfesor.aspx" />
+    <Content Include="profes\tareasProfesor.aspx" />
     <Content Include="Web.config" />
     <Content Include="inicio.aspx" />
     <Content Include="CambiarContrasena.aspx" />
     <Content Include="confirmar.aspx" />
-    <Content Include="InstanciarTarea.aspx" />
-    <Content Include="VerTareasEstudiante.aspx" />
+    <Content Include="alumnos\InstanciarTarea.aspx" />
+    <Content Include="alumnos\VerTareasEstudiante.aspx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AlumnoMain.aspx.cs">
+    <Compile Include="profes\impoexpo\baneos.aspx.cs">
+      <DependentUpon>baneos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="profes\impoexpo\baneos.aspx.designer.cs">
+      <DependentUpon>baneos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="alumnos\AlumnoMain.aspx.cs">
       <DependentUpon>AlumnoMain.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="AlumnoMain.aspx.designer.cs">
+    <Compile Include="alumnos\AlumnoMain.aspx.designer.cs">
       <DependentUpon>AlumnoMain.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Estadisticas.aspx.cs">
+    <Compile Include="profes\Estadisticas.aspx.cs">
       <DependentUpon>Estadisticas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Estadisticas.aspx.designer.cs">
+    <Compile Include="profes\Estadisticas.aspx.designer.cs">
       <DependentUpon>Estadisticas.aspx</DependentUpon>
     </Compile>
-    <Compile Include="exportartareas.aspx.cs">
+    <Compile Include="profes\impoexpo\exportartareas.aspx.cs">
       <DependentUpon>exportartareas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="exportartareas.aspx.designer.cs">
+    <Compile Include="profes\impoexpo\exportartareas.aspx.designer.cs">
       <DependentUpon>exportartareas.aspx</DependentUpon>
     </Compile>
-    <Compile Include="importartareas.aspx.cs">
+    <Compile Include="profes\impoexpo\importartareas.aspx.cs">
       <DependentUpon>importartareas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="importartareas.aspx.designer.cs">
+    <Compile Include="profes\impoexpo\importartareas.aspx.designer.cs">
       <DependentUpon>importartareas.aspx</DependentUpon>
     </Compile>
-    <Compile Include="insertarTarea.aspx.cs">
+    <Compile Include="profes\insertarTarea.aspx.cs">
       <DependentUpon>insertarTarea.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="insertarTarea.aspx.designer.cs">
+    <Compile Include="profes\insertarTarea.aspx.designer.cs">
       <DependentUpon>insertarTarea.aspx</DependentUpon>
     </Compile>
-    <Compile Include="profesor.aspx.cs">
+    <Compile Include="profes\profesor.aspx.cs">
       <DependentUpon>profesor.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="profesor.aspx.designer.cs">
+    <Compile Include="profes\profesor.aspx.designer.cs">
       <DependentUpon>profesor.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -160,25 +172,25 @@
     <Compile Include="confirmar.aspx.designer.cs">
       <DependentUpon>confirmar.aspx</DependentUpon>
     </Compile>
-    <Compile Include="tareasProfesor.aspx.cs">
+    <Compile Include="profes\tareasProfesor.aspx.cs">
       <DependentUpon>tareasProfesor.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="tareasProfesor.aspx.designer.cs">
+    <Compile Include="profes\tareasProfesor.aspx.designer.cs">
       <DependentUpon>tareasProfesor.aspx</DependentUpon>
     </Compile>
-    <Compile Include="InstanciarTarea.aspx.cs">
+    <Compile Include="alumnos\InstanciarTarea.aspx.cs">
       <DependentUpon>InstanciarTarea.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="InstanciarTarea.aspx.designer.cs">
+    <Compile Include="alumnos\InstanciarTarea.aspx.designer.cs">
       <DependentUpon>InstanciarTarea.aspx</DependentUpon>
     </Compile>
-    <Compile Include="VerTareasEstudiante.aspx.cs">
+    <Compile Include="alumnos\VerTareasEstudiante.aspx.cs">
       <DependentUpon>VerTareasEstudiante.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="VerTareasEstudiante.aspx.designer.cs">
+    <Compile Include="alumnos\VerTareasEstudiante.aspx.designer.cs">
       <DependentUpon>VerTareasEstudiante.aspx</DependentUpon>
     </Compile>
   </ItemGroup>

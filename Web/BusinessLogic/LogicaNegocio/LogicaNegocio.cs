@@ -6,15 +6,18 @@ using System.Threading.Tasks;
 using System.Net.Mail;
 using System.Data;
 using System.Data.SqlClient;
+using System.Security.Cryptography;
+using System.Text.RegularExpressions;
 
 namespace LogicaNegocio
 {
     public class LogicaNegocio
     {
         private BaseDatos.BaseDatos bd = new BaseDatos.BaseDatos();
+        private SHA512 hashA;
         public LogicaNegocio()
         {
-            
+            this.hashA = SHA512.Create();
         }
         public void SendEmail(String destinatario, String input)
         {
@@ -141,6 +144,12 @@ namespace LogicaNegocio
             bd.cerrarconexion();
 
             return datos;
+        }
+        public string encriptar(string contra)
+        {
+            
+            byte[] hash = hashA.ComputeHash(Encoding.UTF8.GetBytes(contra));
+            return Regex.Replace(BitConverter.ToString(hash), "-", "");
         }
     }
 }

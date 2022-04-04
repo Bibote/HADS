@@ -61,3 +61,5 @@ C:\Users\milla\Desktop\Uni\Tercero\HADS\HADS\Web\Web\obj\Release\Web.dll
 C:\Users\milla\Desktop\Uni\Tercero\HADS\HADS\Web\Web\obj\Release\Web.pdb
 C:\Users\milla\Desktop\Uni\Tercero\HADS\HADS\Web\Web\bin\BaseDatos.dll
 C:\Users\milla\Desktop\Uni\Tercero\HADS\HADS\Web\Web\bin\BaseDatos.pdb
+C:\Users\milla\Desktop\Uni\Tercero\HADS\HADS\Web\Web\bin\Newtonsoft.Json.dll
+C:\Users\milla\Desktop\Uni\Tercero\HADS\HADS\Web\Web\bin\Newtonsoft.Json.xml
