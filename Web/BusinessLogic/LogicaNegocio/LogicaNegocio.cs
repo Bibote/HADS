@@ -8,6 +8,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Security.Cryptography;
 using System.Text.RegularExpressions;
+using System.Xml;
 
 namespace LogicaNegocio
 {
@@ -151,5 +152,25 @@ namespace LogicaNegocio
             byte[] hash = hashA.ComputeHash(Encoding.UTF8.GetBytes(contra));
             return Regex.Replace(BitConverter.ToString(hash), "-", "");
         }
+
+        public void connect(string mail, string tipo)
+        {
+            bd.conectar();
+            bd.connect(mail, tipo);
+
+            bd.cerrarconexion();
+
+        }
+
+        public void disconnect(string mail)
+        {
+            bd.conectar();
+            bd.disconect(mail);
+
+            bd.cerrarconexion();
+  
+        }
+
+
     }
 }

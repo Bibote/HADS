@@ -27,6 +27,7 @@
             <br />
             <asp:Label ID="Label1" runat="server" ForeColor="Red"></asp:Label>
             <br />
+            <asp:Label ID="Label2" runat="server"></asp:Label>
         </div>
         <p>
             <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Registrarse" />

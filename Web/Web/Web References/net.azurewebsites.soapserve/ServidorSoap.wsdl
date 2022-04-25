@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="getTimes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cod" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getTimesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getTimesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="getTimesSoapIn">
+    <wsdl:part name="parameters" element="tns:getTimes" />
+  </wsdl:message>
+  <wsdl:message name="getTimesSoapOut">
+    <wsdl:part name="parameters" element="tns:getTimesResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ServidorSoapSoap">
+    <wsdl:operation name="getTimes">
+      <wsdl:input message="tns:getTimesSoapIn" />
+      <wsdl:output message="tns:getTimesSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServidorSoapSoap" type="tns:ServidorSoapSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getTimes">
+      <soap:operation soapAction="http://tempuri.org/getTimes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServidorSoapSoap12" type="tns:ServidorSoapSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getTimes">
+      <soap12:operation soapAction="http://tempuri.org/getTimes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServidorSoap">
+    <wsdl:port name="ServidorSoapSoap" binding="tns:ServidorSoapSoap">
+      <soap:address location="http://soapserve.azurewebsites.net/ServidorSoap.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServidorSoapSoap12" binding="tns:ServidorSoapSoap12">
+      <soap12:address location="http://soapserve.azurewebsites.net/ServidorSoap.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

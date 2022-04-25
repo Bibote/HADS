@@ -222,5 +222,42 @@ namespace BaseDatos
 
 
         }
+
+        public void connect(string mail, string tipo)
+        {
+            var st = "insert into Conectados values ('"+mail+"','"+tipo+"')";
+            int numregs;
+            comando = new SqlCommand(st, conexion);
+            try
+            {
+                numregs = comando.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                
+            }
+        }
+        public void disconect(string mail)
+        {
+            var st = "DELETE FROM Conectados values ('" + mail + "')";
+            int numregs;
+            comando = new SqlCommand(st, conexion);
+            try
+            {
+                numregs = comando.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+        }
+
+        public string getTimes(string cod)
+        {
+            var st = "select AVG(EstudianteTarea.hReales) from EstudianteTarea INNER JOIN TareaGenerica ON EstudianteTarea.codTarea=TareaGenerica.codigo WHERE codAsig='"+cod+"'";
+            comando = new SqlCommand(st, conexion);
+            return comando.ExecuteScalar().ToString();
+        }
     }
 }

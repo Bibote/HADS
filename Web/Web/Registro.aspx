@@ -10,9 +10,11 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            Registro de Usuarios<br />
+            Registro de Usuarios<asp:ScriptManager ID="ScriptManager1" runat="server">
+            </asp:ScriptManager>
+            <br />
             Email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+            <asp:TextBox ID="TextBox1" runat="server" OnTextChanged="TextBox1_TextChanged" AutoPostBack="true"></asp:TextBox>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TextBox1" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
             <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="TextBox1" ErrorMessage="El email no es valido" ForeColor="Red" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
             <br />
@@ -37,6 +39,15 @@
                 <asp:ListItem Selected="True">Alumno</asp:ListItem>
                 <asp:ListItem>Profesor</asp:ListItem>
             </asp:RadioButtonList>
+            <asp:UpdatePanel ID="UpdatePanel1" runat="server" ValidateRequestMode="Enabled">
+                <ContentTemplate>
+                    <asp:Label ID="Label2" runat="server"></asp:Label>
+                </ContentTemplate>
+                <Triggers>
+                    <asp:AsyncPostBackTrigger ControlID="TextBox1" EventName="TextChanged">
+                    </asp:AsyncPostBackTrigger>
+                </Triggers>
+            </asp:UpdatePanel>
             <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Registrarse" />
             <br />
             <asp:Label ID="Label1" runat="server" ForeColor="Red"></asp:Label>
